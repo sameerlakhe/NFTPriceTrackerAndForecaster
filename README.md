@@ -6,8 +6,8 @@ We will create an NFT price tracker to compare and forecast NFT valuations to  p
 
 This can be done by activating the pyvizenv env and also loading the alpaca apis using below commands
 
-pip install python-dotenv
-pip install alpaca-trade-api (this one might not be needed as we are getting data from opensea API)
+1) pip install python-dotenv
+2) pip install alpaca-trade-api (this one might not be needed as we are getting data from opensea API)
 
 Ref- https://utoronto.bootcampcontent.com/utoronto-bootcamp/UTOR-VIRT-FIN-PT-02-2022-U-LOL/-/blob/main/Units-Activities/05-APIs/Supplemental/AlpacaMarkets_Installation-Guide.md
 
@@ -49,11 +49,13 @@ An NFT collection can have different assets and the prices of the assets vary ba
 For the sake of simplicity, we have treated all asset equally and the floor price is the lowest price of any of the asset sold on a particular day.
 
 The floor price over a period of time is displayed as a line chart
+***The price (y axis) is in ETH***
 ![prices_over_time.png](Images/prices_over_time.png)
 
 ***Monte Carlo simulations***
 Using the floor price data, the Monte Carlo simulations are generated for different NFT collections
-Sinc
+Since the available data is less, the projection is for a shorter duration of time (say 90 days)
+
 
 ![MonteCarloSimulation.png](Images/MonteCarloSimulation.png)
 
