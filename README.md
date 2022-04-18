@@ -18,8 +18,12 @@ To start making requests you will need the OpenSea API Key, which can be obtaine
 To get different asserts that belong to different collection slug (e.g boredapeyachtclub, cryptokitties
 pudgypenguins,doodles-official) below API was used
 
-https://api.opensea.io/api/v1/assets
-The documentation for this API is available at the link - https://docs.opensea.io/reference/getting-assets
+[Get Asset data using OpenSea API](https://api.opensea.io/api/v1/assets)
+
+
+The documentation for this API is available at the link - 
+[OpenSea API docs](https://docs.opensea.io/reference/getting-assets)
+
 
 A panel will display random 10 asset from a particular collection as below
 
@@ -31,9 +35,15 @@ A panel will display random 10 asset from a particular collection as below
 
 
 To get event data for any given asset, below API was used
-https://api.opensea.io/api/v1/events
-the documentation for this API is at the link - https://docs.opensea.io/reference/retrieving-asset-events
+[Get Events](https://api.opensea.io/api/v1/events)
 
+the documentation for this API is at the link - 
+[Doc](https://docs.opensea.io/reference/retrieving-asset-events)
+
+
+In addition, to get the current price of ETH, the alpacha API was used
+
+[Alpaca API](https://api.alternative.me/v2/ticker/Ethereum/?convert=CAD)
 
 ***Once the successful sale event data is retreived, the floor price was determined**
 We can get the closing price of a stock for a day using Alpacha APIs.
@@ -43,7 +53,9 @@ We had 2 options to determine the price of an NFT per day
 1) get average of price of the NFT sold for a day
 2) get the floor price (min price) the NFT is sold on any particular day
 
-We have proceeded with option 2 and the data is based on the min price of an NFT when there are multiple sales for an NFT for a particular day
+We have proceeded with option 1 and the data is based on the min price of an NFT when there are multiple sales for an NFT for a particular day
+In addition, we have calculated the data using the rolling median over a period of 5 days to avoid the high fluctuations in data
+
 
 An NFT collection can have different assets and the prices of the assets vary based on the rarity/features.
 For the sake of simplicity, we have treated all asset equally and the floor price is the lowest price of any of the asset sold on a particular day.
