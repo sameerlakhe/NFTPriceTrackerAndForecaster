@@ -24,9 +24,7 @@ This can be done by activating the pyvizenv env and also loading the alpaca apis
 ## Resources 
 
 
-Data for this project was retrieved from [OpenSea](https://opensea.io/)
-
-OpenSea API key was required and can be obtained here:
+Data for this project was retrieved from [OpenSea](https://opensea.io/), an API key was required and can be obtained here:
 [Request OpenSea API]( https://docs.opensea.io/reference/request-an-api-key)
 
 [OpenSea API Asset Data](https://api.opensea.io/api/v1/assets)
