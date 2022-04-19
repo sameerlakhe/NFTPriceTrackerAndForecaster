@@ -97,7 +97,11 @@ Since the available data is less, the projection is for a shorter duration of ti
 ## References 
 * [UToronto BootCamp](https://utoronto.bootcampcontent.com/utoronto-bootcamp/UTOR-VIRT-FIN-PT-02-2022-U-LOL/-/blob/main/Units-Activities/05-APIs/Supplemental/AlpacaMarkets_Installation-Guide.md)
 * https://github.com/zseta/python-opensea
+* https://www.youtube.com/watch?v=ga4hTqNRjfw
+* https://levelup.gitconnected.com/how-to-collect-nft-sales-data-using-opensea-api-5a6b9b163f7
+* https://www.youtube.com/watch?v=-IM3531b1XU
 * Chainalysis, January 2022; 2. Grayscale, November 2021; 3. KPMG, The new wave of Web 3.0, January 2022 
+
 ## Contributors
 
 Chantal Garnett, Sameer Lakhe, Emiliano Mendez, Marcus Policicchio
