@@ -1,33 +1,43 @@
-# NFT PriceTracker and Forecaster
+# NFT Price Tracker
+
+![image](https://user-images.githubusercontent.com/99493522/164087329-d61dac3d-ec6f-4dfa-9896-13821a6bff06.png)
+
 
 ## Background 
-We will create an NFT price tracker to compare and forecast NFT valuations to  provide recommendations for NFT investors, collectors and traders.  It will aggregate top NFT projects based on popularity and activity, and help new NFT investors decide which NFTs to purchase based on their risk tolerance  We will consider the data like the prices, volume , life span of project, ranking/popularity , trends/activity by using APIs like OpenSea (as available)
+NFTs are digital assets that are unique and represents real-world tangible objects like art, music, in-game items, videos, audio recording and photos. They can be bought and sold online using crypotcurrency and are becoming increasingly popular. 
+This project will create an NFT price tracker to compare and forecast NFT valuations to  provide recommendations for NFT investors, collectors and traders.  It will aggregate top NFT projects based on popularity and activity, and help new NFT investors decide which NFTs to purchase based on their risk tolerance. The following data will be considered;  daily prices, volume , life span of collection, rank and popularity, trends, and activity using OpenSea API (as available).
 
 ## Technology
-***This notebook needs pyvizenv env to display all the images in panel and alpacha env to load env variables**
+
+* Required environments: pyvizenv and alphacha env
+* OpenSea API
+* Python 
+* Jupyter Notebook 
+* Streamlit
 
 This can be done by activating the pyvizenv env and also loading the alpaca apis using below commands
 
 1) pip install python-dotenv
 2) pip install alpaca-trade-api (this one might not be needed as we are getting data from opensea API)
 
-Ref- https://utoronto.bootcampcontent.com/utoronto-bootcamp/UTOR-VIRT-FIN-PT-02-2022-U-LOL/-/blob/main/Units-Activities/05-APIs/Supplemental/AlpacaMarkets_Installation-Guide.md
-
+***This notebook needs pyvizenv env to display all the images in panel and alpacha env to load env variables**
 ## Resources 
 
-***The data is retreived from OpenSea using the APIs provided by opensea*** 
 
-To start making requests you will need the OpenSea API Key, which can be obtained from here https://docs.opensea.io/reference/request-an-api-key
+Data for this project was retrieved from [OpenSea](https://opensea.io/)
+
+OpenSea API key was required and can be obtained here:
+[Request OpenSea API]( https://docs.opensea.io/reference/request-an-api-key)
+
+[OpenSea API Asset Data](https://api.opensea.io/api/v1/assets)
+
+[OpenSea API Documentation](https://docs.opensea.io/reference/getting-assets)
+
+[Alpaca API](https://api.alternative.me/v2/ticker/Ethereum/?convert=CAD)
+
 
 To get different asserts that belong to different collection slug (e.g boredapeyachtclub, cryptokitties
 pudgypenguins,doodles-official) below API was used
-
-[Get Asset data using OpenSea API](https://api.opensea.io/api/v1/assets)
-
-
-The documentation for this API is available at the link - 
-[OpenSea API docs](https://docs.opensea.io/reference/getting-assets)
-
 ## Examples
 
 A panel will display random 10 asset from a particular collection as below
@@ -77,7 +87,7 @@ Since the available data is less, the projection is for a shorter duration of ti
 ![MonteCarloSimulation.png](Images/MonteCarloSimulation.png)
 
 ## References 
-
+[UToronto BootCamp](https://utoronto.bootcampcontent.com/utoronto-bootcamp/UTOR-VIRT-FIN-PT-02-2022-U-LOL/-/blob/main/Units-Activities/05-APIs/Supplemental/AlpacaMarkets_Installation-Guide.md)
 ## Contributors
 
-
+Chantal Garnett, Sameer Lakhe, Emiliano Mendez, Marcus Policicchio
