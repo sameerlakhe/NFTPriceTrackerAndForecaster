@@ -13,7 +13,6 @@ Data for this project was retrieved from [OpenSea](https://opensea.io/), an API 
 
 ## Technology
 
-* Required environments: pyvizenv and alphacha env
 * OpenSea API
 * Python 
 * Jupyter Notebook 
@@ -30,7 +29,17 @@ Data for this project was retrieved from [OpenSea](https://opensea.io/), an API 
 
 To get different asserts that belong to different collection slug (e.g boredapeyachtclub, cryptokitties
 pudgypenguins,doodles-official) below API was used
-## The Data 
+
+## Installations
+This notebook needs to be executed in pyvizenv env to display all the images in panel and needs python-dotenv to load env variables
+
+This can be done by activating the pyvizenv env and also loading the alpaca apis using below commands
+
+conda activate pyvizenv
+
+pip install python-dotenv
+
+## Usage Examples  
 
 Data from the following NFT collections were obtained:
 * Bored Ape Yacht Club
@@ -87,6 +96,7 @@ Since the available data is less, the projection is for a shorter duration of ti
 
 ## References 
 * [UToronto BootCamp](https://utoronto.bootcampcontent.com/utoronto-bootcamp/UTOR-VIRT-FIN-PT-02-2022-U-LOL/-/blob/main/Units-Activities/05-APIs/Supplemental/AlpacaMarkets_Installation-Guide.md)
+* https://github.com/zseta/python-opensea
 * Chainalysis, January 2022; 2. Grayscale, November 2021; 3. KPMG, The new wave of Web 3.0, January 2022 
 ## Contributors
 
