@@ -6,7 +6,7 @@
 ## Background 
 
 NFTs are digital assets that are unique and represents real-world tangible objects like art, music, in-game items, videos, audio recording and photos. They can be bought and sold online using crypotcurrency and are becoming increasingly popular. 
-This project will create an NFT price tracker to compare and forecast NFT valuations to  provide recommendations for NFT investors, collectors and traders.  It will aggregate top NFT projects based on popularity and activity, and help new NFT investors decide which NFTs to purchase based on their risk tolerance. The following data will be considered;  daily prices, volume , life span of collection, rank and popularity, trends, and activity using OpenSea API (as available).
+This project will create an NFT price tracker to compare and forecast NFT valuations to  provide recommendations for NFT investors, collectors and traders.  It will aggregate top NFT projects based on popularity and activity, and help new NFT investors decide which NFTs to purchase based on their risk tolerance. The following data will be considered;  daily prices, volume , life span of collection, rank and popularity, trends, and activity using OpenSea API.
 
 Data for this project was retrieved from [OpenSea](https://opensea.io/), an API key was required and can be obtained here:
 [Request OpenSea API]( https://docs.opensea.io/reference/request-an-api-key)
@@ -14,30 +14,37 @@ Data for this project was retrieved from [OpenSea](https://opensea.io/), an API 
 ## Technology
 
 * OpenSea API
+* Alpaca API
 * Python 
 * Jupyter Notebook 
 * Streamlit
 
 ## Resources
 
-[OpenSea API Asset Data](https://api.opensea.io/api/v1/assets)
+[OpenSea API Asset Data](https://api.opensea.io/api/v1/assets) was used to get different assets for each collection slug (boredapeyachtclub, mutantboredapeyachtclub, cyrptokitties, pudgypenguins and doodles-official.
 
 [OpenSea API Documentation](https://docs.opensea.io/reference/getting-assets)
 
 [Alpaca API](https://api.alternative.me/v2/ticker/Ethereum/?convert=CAD)
 
+To get event data for any given asset, below API was used
+[Get Events](https://api.opensea.io/api/v1/events)
 
-To get different asserts that belong to different collection slug (e.g boredapeyachtclub, cryptokitties
-pudgypenguins,doodles-official) below API was used
+the documentation for this API is at the link - 
+[Doc](https://docs.opensea.io/reference/retrieving-asset-events)
+
+
+In addition, to get the current price of ETH, the alpacha API was used
+
+[Alpaca API](https://api.alternative.me/v2/ticker/Ethereum/?convert=CAD)
+
 
 ## Installations
-This notebook needs to be executed in pyvizenv env to display all the images in panel and needs python-dotenv to load env variables
+This notebook needs to be executed in pyvizenv env to display all the images in panel and needs python-dotenv to load env variables, this can be done by activating the pyvizenv env and also loading the alpaca apis using commands below:
 
-This can be done by activating the pyvizenv env and also loading the alpaca apis using below commands
+**conda activate pyvizenv**
 
-conda activate pyvizenv
-
-pip install python-dotenv
+**pip install python-dotenv**
 
 ## Usage Examples  
 
@@ -56,40 +63,28 @@ The NFT Price Tracker will display randon  assests from each of the five collect
 ![pudgypenguins.png](Images/pudgypenguins.png)
 
 
+**Note:**
+* NFTs can have multiple sales per day and there is no closing price. 
+* An NFT collection can have different assets and the prices of the assets vary based on the rarity/features.
+* For the sake of simplicity, we have treated all assets equally and the floor price is the lowest price of any of the assets sold on a particular day.
+* Floor price was determined from the sale event data. 
 
-To get event data for any given asset, below API was used
-[Get Events](https://api.opensea.io/api/v1/events)
+**There are 2 options to determine the price of an NFT per day:**
+1) Get average of price of the NFT sold for a day
+2) Get the floor price (min price) the NFT is sold on any particular day
 
-the documentation for this API is at the link - 
-[Doc](https://docs.opensea.io/reference/retrieving-asset-events)
-
-
-In addition, to get the current price of ETH, the alpacha API was used
-
-[Alpaca API](https://api.alternative.me/v2/ticker/Ethereum/?convert=CAD)
-
-***Once the successful sale event data is retreived, the floor price was determined**
-We can get the closing price of a stock for a day using Alpacha APIs.
-However, we do not have a closing price for an NFT, we get the different events for an NFT and the NFT
-can have multiple sales per day.
-We had 2 options to determine the price of an NFT per day
-1) get average of price of the NFT sold for a day
-2) get the floor price (min price) the NFT is sold on any particular day
-
-We have proceeded with option 1 and the data is based on the min price of an NFT when there are multiple sales for an NFT for a particular day
+Option 1 was selected and the data is based on the min price of an NFT when there are multiple sales for an NFT for a particular day
 In addition, we have calculated the data using the rolling median over a period of 5 days to avoid the high fluctuations in data
 
 
-An NFT collection can have different assets and the prices of the assets vary based on the rarity/features.
-For the sake of simplicity, we have treated all asset equally and the floor price is the lowest price of any of the asset sold on a particular day.
+### Visualizations
+The floor price over a period of time for each of the 5 collections are displayed as a **line chart** as shown in the example below. 
 
-The floor price over a period of time is displayed as a line chart
 ***The price (y axis) is in ETH***
 ![prices_over_time.png](Images/prices_over_time.png)
 
-***Monte Carlo simulations***
-Using the floor price data, the Monte Carlo simulations are generated for different NFT collections
-Since the available data is less, the projection is for a shorter duration of time (say 90 days)
+
+Using the rolling median, the **Monte Carlo simulations** are generated for each NFT collections. The projection is based on 6 months of historical data and projected for a duration of 30 days as shown below. 
 
 
 ![MonteCarloSimulation.png](Images/MonteCarloSimulation.png)
