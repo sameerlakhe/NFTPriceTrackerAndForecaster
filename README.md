@@ -68,7 +68,7 @@ The NFT Price Tracker will display randon  assests from each of the five collect
 1) Get average price of the NFT sold for a day, this was calculated by using the rollowing median to avoid the high fluctuations in the data. 
 2) Get the floor price the NFT is sold on any particular day.
 
-### Examples of NFT Price Tracker Visualizations
+### Examples of NFT Price Tracker Visualizations (displayed using streamlit)
 The floor price over a period of time for each of the 5 collections are displayed as a **line chart** as shown in the example below. 
 
 ![image](https://user-images.githubusercontent.com/99493522/164294432-0b0bf36b-6eb8-4dcf-8bde-fc7c50b94996.png)
